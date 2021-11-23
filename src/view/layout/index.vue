@@ -1,10 +1,12 @@
 <template>
   <n-layout >
 		<n-layout-header class='layout_header' :bordered="true">
-			<Header></Header>
+			<Header />
 		</n-layout-header> 
 			<n-layout has-sider>
-				<n-layout-sider class="layout_sider" :bordered="true">侧边栏</n-layout-sider>
+				<n-layout-sider class="layout_sider" :bordered="true">
+					<Sider />
+				</n-layout-sider>
 				<n-layout>
 					<router-view></router-view>
 				</n-layout>
@@ -20,6 +22,7 @@ import { NLayout, NLayoutHeader, NLayoutContent, NLayoutSider } from 'naive-ui'
 
 // 自定义组件
 import Header from './components/header'
+import Sider from './components/sider'
 </script>
 
 
@@ -36,15 +39,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-.layout_header{
+<style scoped>
 
-
-}
-
-.app_sider {
-	min-height: 100vh;
-	width: 200px;
-	background-color: #2e4474;
-}
 </style>

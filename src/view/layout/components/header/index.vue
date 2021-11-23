@@ -1,24 +1,31 @@
 <template>
-  <div class="warpper">
+  <div class="flex h-14">
     <!-- 左侧logo -->
     <div class="header">
-      <p>DIVOPS场景管理</p>
+      <p class="">DIVOPS场景管理</p>
     </div>
 
     <!-- 中部名字 -->
-    <div class="titie">
-
+    <div class="flex-1">
+      <h1 class="text-center">大标题</h1>
     </div>
 
     <!-- 右边功能 -->
-    <div class="btn">
-
+    <div class="flex ">
+      <NAvatar></NAvatar>
+      <InformationSquare />
+      <Settings />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { defineComponent } from 'vue'
+
+import type { Component } from 'vue'
+
+import { NAvatar } from 'naive-ui'
+import { InformationSquare, Settings } from '@vicons/carbon'
 </script>
 
 <script lang="ts">
@@ -30,19 +37,6 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-.warpper {
-  display: flex;
-  height: 55px;
-
-  .header {
-    width: 200xp;
-
-    p {
-      line-height: 55px;
-    }
-  }
-}
-
+<style scoped>
 
 </style>
