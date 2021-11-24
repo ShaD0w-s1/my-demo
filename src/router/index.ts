@@ -1,3 +1,4 @@
+import { App } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
 
@@ -5,19 +6,23 @@ import Arrange from './modules/arrange'
 
 import layout from '../view/layout/index.vue'
 
-const constantRouterMap: Array<RouteRecordRaw> = [ // 固定路由
+
+const modules = import.meta.globEager('./modules/**/*.ts') 
+
+const constantRouterMap: RouteRecordRaw[] = [ // 固定路由
 	{ // 入口 
 		path: '',
+		name: 'root',
 		redirect: 'redirect'
 	},
 	{ // 跳转路由 启动页面 
 		path: '/redirect',
 		name: 'redirect',
-		component: () => import ('@/view/error/redirect.vue')
+		component: () => import ('@/view/error/Redirect.vue')
 	}
 ]
 
-const asyncRouterMap : Array<RouteRecordRaw> = [ // 动态路由
+const asyncRouterMap: RouteRecordRaw[] = [ // 动态路由
 	Arrange
 ]
 
@@ -25,5 +30,11 @@ const router = createRouter({
 	history: createWebHashHistory(),
 	routes: constantRouterMap
 })
+
+export function setupRouter(app: App) {
+	app.use(router)
+	// 创建路由守卫
+	createRouterGuards(router)
+}
 
 export default router
