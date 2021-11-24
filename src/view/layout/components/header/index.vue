@@ -13,8 +13,11 @@
     <!-- 右边功能 -->
     <div class="flex ">
       <NAvatar></NAvatar>
-      <InformationSquare />
-      <Settings />
+      <BellOutlined />
+      <InfoCircleOutlined />
+      <AppstoreOutlined></AppstoreOutlined>
+      <MessageOutlined></MessageOutlined>
+
     </div>
   </div>
 </template>
@@ -25,7 +28,7 @@ import { defineComponent } from 'vue'
 import type { Component } from 'vue'
 
 import { NAvatar } from 'naive-ui'
-import { InformationSquare, Settings } from '@vicons/carbon'
+import { BellOutlined, InfoCircleOutlined, AppstoreOutlined, MessageOutlined } from '@vicons/antd'
 </script>
 
 <script lang="ts">
