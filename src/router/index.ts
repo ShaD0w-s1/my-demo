@@ -1,6 +1,6 @@
-import { App } from 'vue'
+import type { App } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import type { RouteRecordRaw } from 'vue-router'
+import type { Router, RouteRecordRaw } from 'vue-router'
 
 import Arrange from './modules/arrange'
 
@@ -23,18 +23,23 @@ const constantRouterMap: RouteRecordRaw[] = [ // 固定路由
 ]
 
 const asyncRouterMap: RouteRecordRaw[] = [ // 动态路由
-	Arrange
+	Arrange, // 编排页面
 ]
 
 const router = createRouter({
 	history: createWebHashHistory(),
-	routes: constantRouterMap
+	routes: asyncRouterMap
 })
 
 export function setupRouter(app: App) {
 	app.use(router)
 	// 创建路由守卫
 	createRouterGuards(router)
+}
+
+
+function createRouterGuards(router: Router) {
+	
 }
 
 export default router

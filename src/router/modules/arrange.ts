@@ -7,11 +7,15 @@ const Arrange: RouteRecordRaw = {
 	component: layout,
 	redirect: '/arrange/guide',
 	children: [
-		//场景引导
-		{
+		{ //场景引导
 			path: 'guide',
 			name: 'ArrangeGuide',
-			component: () => import('@/view/arrange/index.vue')
+			component: () => import('@/view/arrange/Guide.vue')
+		},
+		{ //场景创建
+			path: 'create',
+			name: 'ArrangeCreate',
+			component: () => import('@/view/arrange/Create.vue')
 		}
 	]
 }
