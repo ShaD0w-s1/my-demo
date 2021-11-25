@@ -5,7 +5,7 @@
       :collapsed-width="64"
       :collapsed-icon-size="22"
       :options="menuOptions"
-      :collapsed="collapsed"
+      :collapsed="props.collapsed"
     />
   </div>
 </template>
