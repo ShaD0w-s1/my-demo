@@ -3,11 +3,11 @@
 </template>
 
 <script lang="ts" setup>
-  import { NButton } from 'naive-ui'
+import { NButton } from 'naive-ui'
 
-   function handleclick () {
-     console.log('123')
-   }
+function handleclick () {
+	console.log('123')
+}
 
 
 

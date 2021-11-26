@@ -1,24 +1,25 @@
 <template>
-  <n-layout  position="absolute" has-sider >
-    <n-layout-sider  :bordered="true">
-      <div class='h-36'>好大一个搜索框</div>
+  <n-layout has-sider>
+    <n-layout-sider>
       <draggable
-        class = ''
-        :list = 'list1'
-        :group = '{name:"list", pull:"clone", put: false}'
-        :sort = 'false'
+        
+        :list='list1'
+        :group="{ name: 'list', pull: 'clone', put: false }"
       >
-        <template #item="{ element }">
-          <NCard>
+        <template #item='{ element }'>
+          <n-card>
             {{element.name}}
-          </NCard>
+          </n-card>
         </template>
       </draggable>
     </n-layout-sider>
-    <n-layout-content class="arrange-bg p-4" :native-scrollbar="false">
-      <NInput>123</NInput>
-      <div class='absolte bg-green-400'>
-        123
+    <n-layout-content position="absolute" class="arrange-bg p-4" style="left:272px;">
+      <NInput />
+      <div class='bg-green-400 h-8 w-96 rounded-full border-2 border-black'>
+        <span>开始</span>
+        <span>场景执行最大限时</span>
+        <input/>
+        <span>分钟</span>
       </div>
       <draggable
         class = 'w-96'
@@ -31,15 +32,14 @@
           </NCard>
         </template>
       </draggable>
-    </n-layout-content>
+    </n-layout-content>  
+
   </n-layout>
 </template>
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
 import draggable from 'vuedraggable'
-import Layout from '../layout/index.vue'
-import { NInput ,NCard,NLayout, NLayoutContent, NLayoutSider } from 'naive-ui'
 
 const list1 = reactive([
 	{ name: 'John', id: 1 },

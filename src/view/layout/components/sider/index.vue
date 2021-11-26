@@ -1,7 +1,6 @@
 <template>
   <div>
     <NMenu 
-      class=""
       :collapsed-width="64"
       :collapsed-icon-size="22"
       :options="menuOptions"
@@ -16,9 +15,6 @@ import { defineProps, defineEmits, h } from 'vue'
 
 // 依赖功能
 import { NMenu, NIcon } from 'naive-ui'
-import type { MenuOption } from 'naive-ui'
-
-import { ThunderboltOutlined ,} from '@vicons/antd'
 
 const props = defineProps<{
   collapsed: boolean
@@ -33,21 +29,7 @@ function renderIcon (icon:any) {
 }
 
 
-const menuOptions: MenuOption[] = [
-	{
-		label: '场景执行',
-		key: '1',
-		icon: renderIcon(ThunderboltOutlined),
-		children:[
-			{
-				label: '场景清单',
-			},
-			{
-				label: '历史清单'
-			}
-		]
-	},
-]
+
 
 </script>
 
