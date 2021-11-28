@@ -1,5 +1,8 @@
 <template>
-  <n-layout has-sider>
+  <n-layout style="height:100%" has-sider>
+    <div style='position:absolute; z-index:9999' >
+      <FullscreenOutlined/>
+    </div>
     <n-layout-sider>
       <draggable
         
@@ -14,8 +17,8 @@
       </draggable>
     </n-layout-sider>
     <n-layout-content position="absolute" class="arrange-bg p-4" style="left:272px;">
-      <NInput />
-      <div class='bg-green-400 h-8 w-96 rounded-full border-2 border-black'>
+      <NInput style="width:350px"/>
+      <div class='bg-green-400 h-8 w-96 rounded-full border-2 border-black' style="line-height: 28px;padding-left: 25px;">
         <span>开始</span>
         <span>场景执行最大限时</span>
         <input/>
@@ -39,6 +42,7 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
+import { FullscreenOutlined } from '@vicons/antd'
 import draggable from 'vuedraggable'
 
 const list1 = reactive([
